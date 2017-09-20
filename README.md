@@ -23,4 +23,3 @@ To get the full use of out centered.vim, you should set some variables in your
 | g:centered_vim_session  | Absolute path to the file in which to store your vim session, string.       |
 | g:centered_offset       | How many columns to make the offset, int. Default 1/3 screen width.         |
 | g:centered_scratch_pad  | Absolute path to the file you want to use as a scratch path, string.        |
-
