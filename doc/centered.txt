@@ -1,0 +1,20 @@
+*unimpaired.txt*  Pairs of handy bracket mappings
+
+Author:  Graeme Nathan
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                                    *centered*
+
+This plugin provides centering (actually offsetting from the left) of the current vim-split.
+
+There are two options, centering with a scratch buffer populated with your .org file of choice, or centering with an empty buffer.
+
+CENTER AND SHOW SCRATCH PAD
+
+*cnt*
+cnt       Toggle centering, reading g:centered_scratch_pad file into the offset buffer
+
+CENTER WITHOUT SCRATCH PAD
+
+*cnn*
+cnn       Toggle centering without reading a file into the offsetting buffer.
