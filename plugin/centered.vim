@@ -1,9 +1,14 @@
 let g:centered_vim_session = '/tmp/vim.session'
 let g:centered_pane = 0
-let g:centered_offset = 80
 let g:centered_scratch_pad = '/tmp/scratch.org'
 
  function! TogglePaneOffset(with_scratch)
+   if exists("g:centered_offset")
+     let l:centered_offset = g:centered_offset
+   else
+     let l:centered_offset = float2nr(&columns * 0.33)
+   endif
+
    if g:centered_pane
      execute "source " . g:centered_vim_session
      let g:centered_pane = 0
@@ -21,7 +26,7 @@ let g:centered_scratch_pad = '/tmp/scratch.org'
        setlocal buftype=nofile
        setlocal readonly
      endif
-     execute "vertical resize " . g:centered_offset
+     execute "vertical resize " . l:centered_offset
      wincmd w
      let g:centered_pane = 1
    endif
