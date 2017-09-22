@@ -1,5 +1,6 @@
 let g:centered_vim_session = '/tmp/vim.session'
 let g:centered_pane = 0
+let g:centered_buffer_num = ''
 let g:centered_scratch_pad = '/tmp/scratch.org'
 
 function! OffSet()
@@ -19,17 +20,17 @@ function! TogglePaneOffset(with_scratch)
     execute "mks! " . g:centered_vim_session
     silent only
     lefta vnew
-    setlocal bufhidden=delete
-    setlocal nobuflisted
-    setlocal noswapfile
-    setlocal nonu
-    file __CENTERED__
+    let g:centered_buffer_num = bufnr("%")
     if a:with_scratch
       execute "e " . g:centered_scratch_pad
     else
       setlocal buftype=nofile
       setlocal readonly
     endif
+    setlocal bufhidden=delete
+    setlocal nobuflisted
+    setlocal noswapfile
+    setlocal nonu
     execute "vertical resize " . OffSet()
     wincmd w
     let g:centered_pane = 1
@@ -38,9 +39,13 @@ endfunction
 
 function! AdjustOffset()
   if g:centered_pane
+    let l:old_switch_buf = &switchbuf
+    let l:from_buf = bufnr("%")
     set switchbuf+=useopen
-    sb __CENTERED__
+    execute "sb " . g:centered_buffer_num
     execute "vertical resize " . OffSet()
+    execute "sb " . l:from_buf
+    set switchbuf = l:old_switch_buf
   endif
 endfunction
 
