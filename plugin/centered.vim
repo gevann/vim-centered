@@ -36,5 +36,15 @@ function! TogglePaneOffset(with_scratch)
   endif
 endfunction
 
+function! AdjustOffset()
+  if g:centered_pane
+    set switchbuf+=useopen
+    sb __CENTERED__
+    execute "vertical resize " . OffSet()
+  endif
+endfunction
+
+autocmd VimResized * :call AdjustOffset()
+
 nnoremap cnt :call TogglePaneOffset(1)<cr>
 nnoremap cnn :call TogglePaneOffset(0)<cr>
