@@ -31,6 +31,8 @@ function! TogglePaneOffset(with_scratch)
     setlocal nobuflisted
     setlocal noswapfile
     setlocal nonu
+    setlocal norelativenumber
+    setlocal wrap
     execute "vertical resize " . OffSet()
     wincmd w
     let g:centered_pane = 1
