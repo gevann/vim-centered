@@ -1,4 +1,4 @@
-*unimpaired.txt*  Pairs of handy bracket mappings
+*centered.txt*  Simple centering for the current pane
 
 Author:  Graeme Nathan
 License: Same terms as Vim itself (see |license|)

@@ -4,10 +4,6 @@ The idea for centered.vim grew out of both a need to jot items down while
 working with him and a desire to not have to twist my head so much while
 working with a wide monitor.
 
-It is as simple as it can be to achieve these two goals. I recommend using it
-alongside org-mode.
-
-
 ## Installation
 
 I recommend using [Vundle](https://github.com/VundleVim/Vundle.vim).

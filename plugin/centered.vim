@@ -1,7 +1,7 @@
 let g:centered_vim_session = '/tmp/vim.session'
 let g:centered_pane = 0
 let g:centered_buffer_num = ''
-let g:centered_scratch_pad = '/tmp/scratch.org'
+let g:centered_scratch_pad = '/tmp/scratch.md'
 
 function! OffSet()
   if exists("g:centered_offset")
